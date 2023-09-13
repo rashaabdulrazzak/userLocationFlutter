@@ -87,13 +87,17 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text('Current Location: '),
+              Center(
+                child: _position != null
+                    ? Text('Current Location: ' + _position.toString())
+                    : Text('No location data'),
+              ),
               SizedBox(
                 height: 25,
               ),
               FloatingActionButton(
                 onPressed: _getCurrentLocation,
-                tooltip: 'Increment',
+                tooltip: 'Get',
                 child: Icon(Icons.add),
               ),
             ],
